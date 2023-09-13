@@ -1,0 +1,16 @@
+# Base Image
+FROM python:3.11
+
+# Installing required packages
+RUN pip install pandas
+RUN pip install numpy
+RUN pip install argparse
+
+# setting /app as working directory
+WORKDIR /app
+
+# Copying contents of current directory into container
+COPY . /app/
+
+# Running pipeline.py file when container starts running
+CMD ["python", "pipeline.py"]
