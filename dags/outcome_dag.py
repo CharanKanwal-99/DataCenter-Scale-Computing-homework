@@ -25,7 +25,8 @@ with DAG(dag_id = 'first_dag',
 
 
     load = PythonOperator(task_id = 'load',
-                          python_callable = load_data)
+                          python_callable = load_data,
+                          provide_context=True)
 
 
 
