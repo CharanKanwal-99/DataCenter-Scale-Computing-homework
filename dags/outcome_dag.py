@@ -24,9 +24,9 @@ with DAG(dag_id = 'first_dag',
                                provide_context=True)
 
 
-    #load = PythonOperator(task_id = 'load',
+    load = PythonOperator(task_id = 'load',
                           #python_callable = load_data)
 
 
 
-    extract >> transform
+    extract >> transform >> load
